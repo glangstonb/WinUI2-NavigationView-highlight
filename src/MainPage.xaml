@@ -12,12 +12,7 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary>
-          <DataTemplate x:Key="DefaultTemplate" x:DataType="local:DefaultItem">
-            <muxc:NavigationViewItem>
-            </muxc:NavigationViewItem>
-          </DataTemplate>
-        </ResourceDictionary>
+        <local:MenuItemsTemplate />
         <ResourceDictionary>
           <local:MenuItemTemplateSelector
             x:Key="MenuItemTemplateSelector"
