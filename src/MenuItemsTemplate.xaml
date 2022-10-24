@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+  x:Class="WinUI2_NavigationView_highlight.MenuItemsTemplate"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+  xmlns:local="using:WinUI2_NavigationView_highlight">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary>
+      <DataTemplate x:Key="DefaultTemplate" x:DataType="local:DefaultItem">
+        <muxc:NavigationViewItem>
+        </muxc:NavigationViewItem>
+      </DataTemplate>
+    </ResourceDictionary>
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

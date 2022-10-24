@@ -5,10 +5,39 @@
     xmlns:local="using:WinUI2_NavigationView_highlight"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+          <DataTemplate x:Key="DefaultTemplate" x:DataType="local:DefaultItem">
+            <muxc:NavigationViewItem>
+            </muxc:NavigationViewItem>
+          </DataTemplate>
+        </ResourceDictionary>
+        <ResourceDictionary>
+          <local:MenuItemTemplateSelector
+            x:Key="MenuItemTemplateSelector"
+            DefaultItemTemplate="{StaticResource DefaultTemplate}"/>
+        </ResourceDictionary>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
   <Grid>
-    <TextBlock>some sample text</TextBlock>
+    <muxc:NavigationView
+      x:Name="NavigationViewControl"
+      MenuItemTemplateSelector="{StaticResource MenuItemTemplateSelector}"
+      MenuItemsSource="{x:Bind ViewModel.MenuItems, Mode=OneWay}"
+      SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=OneWay}">
+      <RelativePanel x:Name="NavigationViewMainPanel" x:Uid="MainPanel">
+        <TextBlock>
+          RelativePanel sample text
+        </TextBlock>
+      </RelativePanel>
+    </muxc:NavigationView>
   </Grid>
 </Page>
