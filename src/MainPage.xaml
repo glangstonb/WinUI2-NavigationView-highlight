@@ -12,7 +12,12 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <local:MenuItemsTemplate />
+        <!--
+          This didn't work:
+          <local:MenuItemsTemplate />
+          MichaelS and GrahamL couldn't figure out why, please tell us if you know what's wrong with this.
+        -->
+        <ResourceDictionary Source="MenuItemsTemplate.xaml" />
         <ResourceDictionary>
           <local:MenuItemTemplateSelector
             x:Key="MenuItemTemplateSelector"
