@@ -27,6 +27,22 @@ namespace WinUI2_NavigationView_highlight
     }
 
     [RelayCommand]
+    private void RefreshFixedItems()
+    {
+      if (MenuItems == null)
+      {
+        MenuItems = new ObservableCollection<MenuItem>();
+      }
+      else
+      {
+        MenuItems.Clear();
+      }
+      MenuItems.Add(fixedItem1);
+      MenuItems.Add(fixedItem2);
+      MenuItems.Add(treeRootItem);
+    }
+
+    [RelayCommand]
     private void RefreshSubItems()
     {
       treeRootItem.SubMenuItems.Clear();
@@ -44,17 +60,7 @@ namespace WinUI2_NavigationView_highlight
     [RelayCommand]
     private void RefreshAllItems()
     {
-      if (MenuItems == null)
-      {
-        MenuItems = new ObservableCollection<MenuItem>();
-      }
-      else
-      {
-        MenuItems.Clear();
-      }
-      MenuItems.Add(fixedItem1);
-      MenuItems.Add(fixedItem2);
-      MenuItems.Add(treeRootItem);
+      RefreshFixedItems();
       RefreshSubItems();
     }
   }
