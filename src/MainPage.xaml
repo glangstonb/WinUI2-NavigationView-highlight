@@ -28,7 +28,10 @@
       MenuItemTemplateSelector="{StaticResource MenuItemTemplateSelector}"
       MenuItemsSource="{x:Bind ViewModel.MenuItems, Mode=OneWay}"
       SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=OneWay}">
-      <RelativePanel x:Name="NavigationViewMainPanel" x:Uid="MainPanel">
+      <StackPanel
+        x:Name="NavigationViewMainPanel"
+        x:Uid="MainPanel"
+        Orientation="Vertical">
         <TextBlock
           x:Name="Guide"
           Padding="16,16,16,16">
@@ -36,26 +39,23 @@
         </TextBlock>
         <Button
           x:Name="RefreshFixedItemsButton"
-          RelativePanel.Below="Guide"
           Padding="16,16,16,16"
           Command="{x:Bind ViewModel.RefreshFixedItemsCommand, Mode=OneWay}">
           Click to refresh the top menu items
         </Button>
         <Button
           x:Name="RefreshSubItemsButton"
-          RelativePanel.Below="RefreshFixedItemsButton"
           Padding="16,16,16,16"
           Command="{x:Bind ViewModel.RefreshSubItemsCommand, Mode=OneWay}">
           Click to refresh the sub menu items
         </Button>
         <Button
           x:Name="RefreshAllButton"
-          RelativePanel.Below="RefreshSubItemsButton"
           Padding="16,16,16,16"
           Command="{x:Bind ViewModel.RefreshAllItemsCommand, Mode=OneWay}">
           Click to refresh all menu items
         </Button>
-      </RelativePanel>
+      </StackPanel>
     </muxc:NavigationView>
   </Grid>
 </Page>
