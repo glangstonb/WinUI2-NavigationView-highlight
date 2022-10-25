@@ -17,15 +17,32 @@ namespace WinUI2_NavigationView_highlight
     [ObservableProperty]
     private MenuItem? selectedItem;
 
-    private MenuItem fixedItem1 = new MenuItem("FIXEDITEM1");
-    private MenuItem fixedItem2 = new MenuItem("FIXEDITEM2");
+    private MenuItem fixedItem1 = new MenuItem("FIXED_ITEM_1");
+    private MenuItem fixedItem2 = new MenuItem("FIXED_ITEM_2");
+    private MenuItem treeRootItem = new MenuItem("TREE_ROOT");
 
     public MainViewModel()
     {
-      RefreshItems();
+      RefreshAllItems();
     }
 
-    public void RefreshItems()
+    [RelayCommand]
+    private void RefreshSubItems()
+    {
+      treeRootItem.SubMenuItems.Clear();
+      List<MenuItem> newMenuItems = new List<MenuItem>();
+      newMenuItems.Add(treeRootItem);
+      int newMenuItemCount = 3 + (random.Next() % 3);
+      while (newMenuItems.Count < newMenuItemCount)
+      {
+        MenuItem nextMenuItem = new MenuItem("random_item_" + newMenuItems.Count);
+        newMenuItems[random.Next() % newMenuItems.Count].SubMenuItems.Add(nextMenuItem);
+        newMenuItems.Add(nextMenuItem);
+      }
+    }
+
+    [RelayCommand]
+    private void RefreshAllItems()
     {
       if (MenuItems == null)
       {
@@ -37,27 +54,8 @@ namespace WinUI2_NavigationView_highlight
       }
       MenuItems.Add(fixedItem1);
       MenuItems.Add(fixedItem2);
-      List<MenuItem> newMenuItems = new List<MenuItem>();
-      int newMenuItemCount = 4 + (random.Next() % 4);
-      while (newMenuItems.Count < newMenuItemCount)
-      {
-        MenuItem nextMenuItem = new MenuItem("randomItem" + newMenuItems.Count);
-        if (newMenuItems.Count == 0 || random.Next() % 3 <= 0)
-        {
-          MenuItems.Add(nextMenuItem);
-        }
-        else
-        {
-          newMenuItems[random.Next() % newMenuItems.Count].SubMenuItems.Add(nextMenuItem);
-        }
-        newMenuItems.Add(nextMenuItem);
-      }
-    }
-
-    [RelayCommand]
-    private void RefreshMenu()
-    {
-      RefreshItems();
+      MenuItems.Add(treeRootItem);
+      RefreshSubItems();
     }
   }
 }

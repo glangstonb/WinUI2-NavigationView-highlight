@@ -32,13 +32,21 @@
         <TextBlock
           x:Name="Guide"
           Padding="16,16,16,16">
-          Select an item in the menu, then click the button below.
+          Select an item in the menu, then click the buttons below.
         </TextBlock>
         <Button
+          x:Name="RefreshAllButton"
           RelativePanel.Below="Guide"
           Padding="16,16,16,16"
-          Command="{x:Bind ViewModel.RefreshMenuCommand, Mode=OneWay}">
-          Click to refresh
+          Command="{x:Bind ViewModel.RefreshAllItemsCommand, Mode=OneWay}">
+          Click to refresh all menu items
+        </Button>
+        <Button
+          x:Name="RefreshSubItemsButton"
+          RelativePanel.Below="RefreshAllButton"
+          Padding="16,16,16,16"
+          Command="{x:Bind ViewModel.RefreshSubItemsCommand, Mode=OneWay}">
+          Click to refresh the sub menu items
         </Button>
       </RelativePanel>
     </muxc:NavigationView>
