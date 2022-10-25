@@ -30,12 +30,12 @@
       SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=OneWay}">
       <RelativePanel x:Name="NavigationViewMainPanel" x:Uid="MainPanel">
         <TextBlock
-          x:Name="SampleTextBlock"
+          x:Name="Guide"
           Padding="16,16,16,16">
-          RelativePanel sample text
+          Select an item in the menu, then click the button below.
         </TextBlock>
         <Button
-          RelativePanel.Below="SampleTextBlock"
+          RelativePanel.Below="Guide"
           Padding="16,16,16,16"
           Command="{x:Bind ViewModel.RefreshMenuCommand, Mode=OneWay}">
           Click to refresh
