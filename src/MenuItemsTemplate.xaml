@@ -9,7 +9,9 @@
       <DataTemplate x:Key="DefaultTemplate" x:DataType="local:MenuItem">
         <muxc:NavigationViewItem
           DataContext="{x:Bind}"
-          Content="{x:Bind Name, Mode=OneWay}">
+          Content="{x:Bind Name, Mode=OneWay}"
+          MenuItemsSource="{x:Bind SubMenuItems, Mode=OneWay}"
+          IsExpanded="True">
         </muxc:NavigationViewItem>
       </DataTemplate>
     </ResourceDictionary>

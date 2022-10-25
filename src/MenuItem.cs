@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace WinUI2_NavigationView_highlight
 {
@@ -7,9 +8,12 @@ namespace WinUI2_NavigationView_highlight
     [ObservableProperty]
     public string name = "default string";
 
+    public ObservableCollection<MenuItem> SubMenuItems { get; set; }
+
     public MenuItem(string pName)
     {
       Name = pName;
+      SubMenuItems = new ObservableCollection<MenuItem>();
     }
   }
 }

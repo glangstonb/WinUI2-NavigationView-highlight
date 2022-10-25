@@ -29,9 +29,17 @@
       MenuItemsSource="{x:Bind ViewModel.MenuItems, Mode=OneWay}"
       SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=OneWay}">
       <RelativePanel x:Name="NavigationViewMainPanel" x:Uid="MainPanel">
-        <TextBlock>
+        <TextBlock
+          x:Name="SampleTextBlock"
+          Padding="16,16,16,16">
           RelativePanel sample text
         </TextBlock>
+        <Button
+          RelativePanel.Below="SampleTextBlock"
+          Padding="16,16,16,16"
+          Command="{x:Bind ViewModel.RefreshMenuCommand, Mode=OneWay}">
+          Click to refresh
+        </Button>
       </RelativePanel>
     </muxc:NavigationView>
   </Grid>
