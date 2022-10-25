@@ -12,11 +12,6 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <!--
-          This didn't work:
-          <local:MenuItemsTemplate />
-          MichaelS and GrahamL couldn't figure out why, please tell us if you know what's wrong with this.
-        -->
         <local:MenuItemsTemplate />
         <ResourceDictionary>
           <local:MenuItemTemplateSelector
