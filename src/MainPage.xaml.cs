@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace WinUI2_NavigationView_highlight
 {
@@ -9,6 +10,7 @@ namespace WinUI2_NavigationView_highlight
     public MainPage()
     {
       InitializeComponent();
+      NavigationCacheMode = NavigationCacheMode.Required;
       DataContext = ViewModel = new MainViewModel();
     }
   }

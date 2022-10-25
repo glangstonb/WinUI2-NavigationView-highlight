@@ -17,7 +17,7 @@
           <local:MenuItemsTemplate />
           MichaelS and GrahamL couldn't figure out why, please tell us if you know what's wrong with this.
         -->
-        <ResourceDictionary Source="MenuItemsTemplate.xaml" />
+        <local:MenuItemsTemplate />
         <ResourceDictionary>
           <local:MenuItemTemplateSelector
             x:Key="MenuItemTemplateSelector"

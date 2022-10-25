@@ -6,8 +6,12 @@
   xmlns:local="using:WinUI2_NavigationView_highlight">
   <ResourceDictionary.MergedDictionaries>
     <ResourceDictionary>
-      <DataTemplate x:Key="DefaultTemplate" x:DataType="local:DefaultItem">
-        <muxc:NavigationViewItem>
+      <DataTemplate x:Key="DefaultTemplate" x:DataType="local:MenuItem">
+        <muxc:NavigationViewItem
+          DataContext="{x:Bind}"
+          Background="White"
+          Foreground="Blue"
+          Content="{x:Bind Name, Mode=OneWay}">
         </muxc:NavigationViewItem>
       </DataTemplate>
     </ResourceDictionary>

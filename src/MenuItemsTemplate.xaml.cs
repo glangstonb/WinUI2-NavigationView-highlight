@@ -4,6 +4,7 @@
   {
     public MenuItemsTemplate()
     {
+      InitializeComponent();
     }
   }
 }
