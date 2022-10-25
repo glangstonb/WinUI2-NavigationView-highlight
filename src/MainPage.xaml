@@ -34,26 +34,33 @@
         Orientation="Vertical">
         <TextBlock
           x:Name="Guide"
-          Padding="16,16,16,16">
-          Select an item in the menu, then click the buttons below.
+          HorizontalAlignment="Left"
+          Width="640"
+          Padding="16,16,16,16"
+          TextWrapping="Wrap">
+          Click an item in the NavigationView menu to the left and notice that it becomes highlighted while selected.
+          Then try pressing the buttons below and see how the menu items remain highlighted even when they aren't selected.
         </TextBlock>
         <Button
           x:Name="RefreshFixedItemsButton"
-          Padding="16,16,16,16"
+          Padding="8,8,8,8"
+          Margin="4,4,4,4"
           Command="{x:Bind ViewModel.RefreshFixedItemsCommand, Mode=OneWay}">
-          Click to refresh the top menu items
+          Refresh the top menu items
         </Button>
         <Button
           x:Name="RefreshSubItemsButton"
-          Padding="16,16,16,16"
+          Padding="8,8,8,8"
+          Margin="4,4,4,4"
           Command="{x:Bind ViewModel.RefreshSubItemsCommand, Mode=OneWay}">
-          Click to refresh the sub menu items
+          Refresh the sub menu items
         </Button>
         <Button
           x:Name="RefreshAllButton"
-          Padding="16,16,16,16"
+          Padding="8,8,8,8"
+          Margin="4,4,4,4"
           Command="{x:Bind ViewModel.RefreshAllItemsCommand, Mode=OneWay}">
-          Click to refresh all menu items
+          Refresh all menu items
         </Button>
       </StackPanel>
     </muxc:NavigationView>

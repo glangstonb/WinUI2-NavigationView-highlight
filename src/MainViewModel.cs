@@ -48,7 +48,7 @@ namespace WinUI2_NavigationView_highlight
       treeRootItem.SubMenuItems.Clear();
       List<MenuItem> newMenuItems = new List<MenuItem>();
       newMenuItems.Add(treeRootItem);
-      int newMenuItemCount = 3 + (random.Next() % 3);
+      int newMenuItemCount = 4 + (random.Next() % 4);
       while (newMenuItems.Count < newMenuItemCount)
       {
         MenuItem nextMenuItem = new MenuItem("random_item_" + newMenuItems.Count);
