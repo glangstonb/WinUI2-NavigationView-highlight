@@ -1,4 +1,4 @@
-#WinUI2 NavigationView highlight bug
+#### WinUI2 NavigationView highlight bug
 
 Build and run the application, you should see a window with a NavigationView with some navigation items in it. The top two are fixed and have no children, then there's a root with a randomly generated tree of descendant items. Inside the actual page contents you will see some brief instructions and 3 buttons arranged vertically.
 
