@@ -1,9 +1,6 @@
-﻿using System;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
+﻿using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 
 namespace WinUI2_NavigationView_highlight
 {
@@ -11,8 +8,7 @@ namespace WinUI2_NavigationView_highlight
   {
     public App()
     {
-      this.InitializeComponent();
-      this.Suspending += OnSuspending;
+      InitializeComponent();
     }
 
     protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -21,14 +17,8 @@ namespace WinUI2_NavigationView_highlight
       if (rootFrame == null)
       {
         rootFrame = new Frame();
-        rootFrame.NavigationFailed += OnNavigationFailed;
-        if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-        {
-          //TODO: Load state from previously suspended application
-        }
         Window.Current.Content = rootFrame;
       }
-
       if (e.PrelaunchActivated == false)
       {
         if (rootFrame.Content == null)
@@ -37,18 +27,6 @@ namespace WinUI2_NavigationView_highlight
         }
         Window.Current.Activate();
       }
-    }
-
-    void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-    {
-      throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
-    }
-
-    private void OnSuspending(object sender, SuspendingEventArgs e)
-    {
-      var deferral = e.SuspendingOperation.GetDeferral();
-      //TODO: Save application state and stop any background activity
-      deferral.Complete();
     }
   }
 }

@@ -6,7 +6,7 @@ namespace WinUI2_NavigationView_highlight
   public partial class MenuItem : ObservableObject
   {
     [ObservableProperty]
-    public string name = "default string";
+    public string name;
 
     public ObservableCollection<MenuItem> SubMenuItems { get; set; }
 
